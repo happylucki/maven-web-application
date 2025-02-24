@@ -1,6 +1,6 @@
 
 
-node {
+node('nodes') {
 
   properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '2', numToKeepStr: '3')), rateLimitBuilds(), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
   echo "Job name is  ${env.JOB_NAME}"
